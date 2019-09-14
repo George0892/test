@@ -2,26 +2,26 @@ package pagemodels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
 
-public class AuthenticationPage extends HomePage {
-    public WebDriver driver;
+public class AuthenticationPage {
 
-    private By emailInput = By.id("email");
-    private By passwordInput = By.id("passwd");
-    private By signInButton = By.id("SubmitLogin");
+    private final WebDriver driver;
 
-    private By pageTitle = By.id("page-heading");
+    private final static By emailInput = By.id("email");
+    private final static By passwordInput = By.id("passwd");
+    private final static By signInButton = By.id("SubmitLogin");
 
-    private static final String PAGE_URL="http://automationpractice.com/index.php?controller=authentication&back=my-account";
+    private By pageTitle = By.xpath("/html/head/title");
+
+    private static final String PAGE_URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
 
     public AuthenticationPage(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
     public void openSignInPage() {
-        driver = new ChromeDriver();
-        driver.get(PAGE_URL);
+        driver.navigate().to(PAGE_URL);
     }
 
     public void getEmailInput(String email) {
@@ -36,8 +36,9 @@ public class AuthenticationPage extends HomePage {
         driver.findElement(signInButton).click();
     }
 
-    public void getPageTitle(){
-        driver.findElement(pageTitle);
+    public void getPageTitle() {
+        WebElement element = driver.findElement(pageTitle);
+        element.getLocation();
     }
 
 }

@@ -5,17 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class MyAddressesPage extends HomePage {
 
-    private static final String PAGE_URL="http://automationpractice.com/index.php?controller=addresses";
-
-    private By updateButton = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]");
-
-    private By submitAddress = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]");
-
-    private By firstNameInput = By.id("firstname");
-
-    private By addressName = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[1]");
-
-    WebDriver driver;
+    private static final String PAGE_URL = "http://automationpractice.com/index.php?controller=addresses";
+    private static final By updateButton = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]");
+    private static final By submitAddress = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]");
+    private static final By firstNameInput = By.id("firstname");
+    private static final By addressName = By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[1]");
 
     public MyAddressesPage(WebDriver driver) {
         super(driver);

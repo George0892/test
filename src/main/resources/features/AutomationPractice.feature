@@ -1,12 +1,9 @@
 Feature: User creates an account
 
   Scenario: Order T-Shirt (and Verify in Order History)
-
    When user opens the automationpractice website and clicks the Sign in button
 
-
   Scenario: Update Personal Information (First Name) in My Account
-
   When user opens the automationpractice website and clicks the Sign in button
   Then the Authentication page is displayed
   And user inserts "eliza@test.com" and "Password123" and clicks the Sign in button
